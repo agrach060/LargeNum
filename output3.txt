@@ -1,0 +1,822 @@
+Sun May 21 21:49:24 PDT 2023
+Linux csslab4 4.18.0-425.3.1.el8.x86_64 #1 SMP Wed Nov 9 20:13:27 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+uid=1353848(agrach) gid=2121353848(agrach) groups=2121353848(agrach),605559(lab-access)
+=====================================================
+1. Compilation warnings are in the section below
+=====================================================
+=====================================================
+2. Program output are in the section below
+=====================================================
+1,234,567,890,123,456,789here
+test1 complete
+test2 complete
+test3 complete
+test4 complete
+test5 complete
+test6 complete
+Done.
+=====================================================
+3. clang-tidy warnings are in the section below
+=====================================================
+15241 warnings generated.
+28381 warnings generated.
+Suppressed 28381 warnings (28381 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+=====================================================
+4. clang-format warnings are in the section below
+=====================================================
+Running clang-format on ./largenum.cpp
+Running clang-format on ./main.cpp
+15c15
+<   cout<< strs.str()<<"here"<< endl;
+---
+>   cout << strs.str() << "here" << endl;
+=====================================================
+5. Memory leak issues are in the section below
+=====================================================
+=====================================================
+6. valgrind memory test is in the section below. Look for "definitely lost" 
+=====================================================
+==3193136== Memcheck, a memory error detector
+==3193136== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==3193136== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==3193136== Command: ./a.out
+==3193136== Parent PID: 3193071
+==3193136== 
+==3193136== 
+==3193136== HEAP SUMMARY:
+==3193136==     in use at exit: 0 bytes in 0 blocks
+==3193136==   total heap usage: 1,154 allocs, 1,154 frees, 86,519 bytes allocated
+==3193136== 
+==3193136== All heap blocks were freed -- no leaks are possible
+==3193136== 
+==3193136== For lists of detected and suppressed errors, rerun with: -s
+==3193136== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+=====================================================
+7. Code coverage information is in the section below
+=====================================================
+File '/home/NETID/agrach/2023win342d-p2-agrach060/largenum.cpp':
+Name                                                                                                                      Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+LargeNum::getIsPositive() const                                                                                                 1       0 100.00%         1       0 100.00%         0       0   0.00%
+LargeNum::getDigits() const                                                                                                     1       0 100.00%         1       0 100.00%         0       0   0.00%
+operator<<(std::ostream&, LargeNum const&)                                                                                     14       0 100.00%        23       0 100.00%        10       0 100.00%
+LargeNum::LargeNum(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)                     11       1  90.91%        14       2  85.71%         8       2  75.00%
+LargeNum::LargeNum(int)                                                                                                         1       0 100.00%         4       0 100.00%         0       0   0.00%
+LargeNum::isZero() const                                                                                                        7       0 100.00%         8       0 100.00%         4       0 100.00%
+LargeNum::negate()                                                                                                              6       0 100.00%         9       0 100.00%         4       0 100.00%
+LargeNum::setDigits(std::vector<int, std::allocator<int> > const&)                                                              1       0 100.00%         1       0 100.00%         0       0   0.00%
+LargeNum::abs() const                                                                                                           3       0 100.00%         8       0 100.00%         2       0 100.00%
+LargeNum::setIsPositive(bool)                                                                                                   1       0 100.00%         1       0 100.00%         0       0   0.00%
+LargeNum::operator+(LargeNum const&) const                                                                                     22       2  90.91%        28       6  78.57%        16       4  75.00%
+LargeNum::operator-(LargeNum const&) const                                                                                     28       3  89.29%        41       9  78.05%        20       5  75.00%
+LargeNum::operator*(LargeNum const&) const                                                                                     19       1  94.74%        20       2  90.00%        14       1  92.86%
+LargeNum::operator/(LargeNum const&) const                                                                                     19       1  94.74%        22       2  90.91%        14       1  92.86%
+LargeNum::operator==(LargeNum const&) const                                                                                    10       0 100.00%        11       0 100.00%         6       0 100.00%
+LargeNum::operator!=(LargeNum const&) const                                                                                     1       0 100.00%         1       0 100.00%         0       0   0.00%
+LargeNum::operator<(LargeNum const&) const                                                                                     12       0 100.00%        14       0 100.00%         8       0 100.00%
+LargeNum::operator>(LargeNum const&) const                                                                                      1       0 100.00%         1       0 100.00%         0       0   0.00%
+LargeNum::operator<=(LargeNum const&) const                                                                                     4       1  75.00%         6       2  66.67%         2       1  50.00%
+LargeNum::operator>=(LargeNum const&) const                                                                                     1       0 100.00%         1       0 100.00%         0       0   0.00%
+LargeNum::operator++()                                                                                                         32       7  78.12%        44      11  75.00%        26       7  73.08%
+LargeNum::operator++(int)                                                                                                       1       0 100.00%         5       0 100.00%         0       0   0.00%
+LargeNum::operator--()                                                                                                          1       0 100.00%         4       0 100.00%         0       0   0.00%
+LargeNum::operator--(int)                                                                                                       1       0 100.00%         5       0 100.00%         0       0   0.00%
+LargeNum::removeLeadingZeros()                                                                                                  5       0 100.00%         5       0 100.00%         4       0 100.00%
+LargeNum::addDigits(std::vector<int, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&)              19       0 100.00%        28       0 100.00%        18       1  94.44%
+LargeNum::subDigits(std::vector<int, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&) const        15       0 100.00%        31       0 100.00%        12       0 100.00%
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                                         237      16  93.25%       337      34  89.91%       168      22  86.90%
+
+File '/home/NETID/agrach/2023win342d-p2-agrach060/main.cpp':
+Name                                                                                                                      Regions    Miss   Cover     Lines    Miss   Cover  Branches    Miss   Cover
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+test1()                                                                                                                         1       0 100.00%        31       6  80.65%         0       0   0.00%
+test2()                                                                                                                         1       0 100.00%        15      12  20.00%         0       0   0.00%
+test3()                                                                                                                         1       0 100.00%        26      14  46.15%         0       0   0.00%
+test4()                                                                                                                         1       0 100.00%         8       5  37.50%         0       0   0.00%
+test5()                                                                                                                         1       0 100.00%        10       7  30.00%         0       0   0.00%
+test6()                                                                                                                         1       0 100.00%        19      13  31.58%         0       0   0.00%
+main                                                                                                                            1       0 100.00%         9       0 100.00%         0       0   0.00%
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                                           7       0 100.00%       118      57  51.69%         0       0   0.00%
+/home/NETID/agrach/2023win342d-p2-agrach060/largenum.cpp:
+    1|       |#include "largenum.h"
+    2|       |#include <algorithm>
+    3|       |#include <cassert>
+    4|       |#include <iostream>
+    5|       |
+    6|       |using namespace std;
+    7|       |
+    8|       |// Your code goes here
+    9|       |
+   10|       |// getter for isPositive
+   11|      4|bool LargeNum::getIsPositive() const { return isPositive; }
+   12|       |
+   13|       |// getter for digits
+   14|      9|vector<int> LargeNum::getDigits() const { return digits; }
+   15|       |
+   16|       |// output number with a comma after ever 3 digits,
+   17|       |// e.g. 1234567890 -> 1,234,567,890
+   18|      9|ostream &operator<<(ostream &out, const LargeNum &num) {
+   19|      9|  const vector<int> &digits = num.getDigits();
+   20|      9|  int size = static_cast<int>(digits.size());
+   21|      9|  if (digits[size - 1] == -1) {
+   22|      2|    out << '-';
+   23|      2|    out << digits[size - 2];
+   24|     24|    for (int i = size - 3; i >= 0; --i) {
+   25|     22|      if ((i + 1) % 3 == 0) {
+   26|      7|        out << ',';
+   27|      7|      }
+   28|     22|      out << digits[i];
+   29|     22|    }
+   30|       |
+   31|      7|  } else {
+   32|      7|    out << digits[size - 1];
+   33|     60|    for (int i = size - 2; i >= 0; --i) {
+   34|     53|      if ((i + 1) % 3 == 0) {
+   35|     16|        out << ',';
+   36|     16|      }
+   37|     53|      out << digits[i];
+   38|     53|    }
+   39|      7|  }
+   40|      9|  return out;
+   41|      9|}
+   42|       |
+   43|       |// default constructor from string
+   44|    313|LargeNum::LargeNum(const string &str) {
+   45|    313|  isPositive = (str[0] != '-');
+   46|       |  // Parse the number into digits and store them in reverse order
+   47|    800|  for (size_t i = str.length(); i-- > 0;) {
+   48|    487|    char digit = str[i];
+   49|    487|    if (digit == '-') {
+   50|     38|      digits.push_back(-1); // negative sign
+   51|     38|      isPositive = false;
+   52|    449|    } else if (digit >= '0' && digit <= '9') {
+   53|    449|      digits.push_back(digit - '0');
+   54|    449|    } else {
+   55|      0|      throw invalid_argument("Invalid character in number string.");
+   56|      0|    }
+   57|    487|  }
+   58|    313|}
+   59|       |
+   60|    189|LargeNum::LargeNum(int anInteger) {
+   61|       |  // Convert the integer to a string and call the string constructor
+   62|    189|  string str = to_string(anInteger);
+   63|    189|  *this = LargeNum(str);
+   64|    189|}
+   65|       |
+   66|       |// returns true if the number is zero
+   67|     26|bool LargeNum::isZero() const {
+   68|     30|  for (int i = 0; i < digits.size(); i++) {
+   69|     26|    if (digits[i] != 0) {
+   70|     22|      return false;
+   71|     22|    }
+   72|     26|  }
+   73|      4|  return true;
+   74|     26|}
+   75|       |
+   76|       |// negates the number, positive becomes negative, negative becomes positive
+   77|       |// Zero is always positive
+   78|     10|LargeNum &LargeNum::negate() {
+   79|     10|  if (digits.size() == 1 && digits[0] == 0) {
+   80|      1|    isPositive = true;
+   81|      1|    return *this;
+   82|      1|  }
+   83|      9|  digits.push_back(-1);
+   84|      9|  isPositive = !isPositive;
+   85|      9|  return *this;
+   86|     10|}
+   87|       |
+   88|       |// setter for digits
+   89|    104|void LargeNum::setDigits(const vector<int> &newDigits) { digits = newDigits; }
+   90|       |
+   91|       |// returns absolute value
+   92|    132|LargeNum LargeNum::abs() const {
+   93|    132|  LargeNum result = *this;
+   94|    132|  result.setIsPositive(true); // Make the number positive
+   95|       |
+   96|    132|  if (!isPositive) {
+   97|     14|    result.digits.pop_back(); // Remove the last digit
+   98|     14|  }
+   99|    132|  return result;
+  100|    132|}
+  101|       |
+  102|       |// setter for isPositive
+  103|    236|void LargeNum::setIsPositive(bool value) { isPositive = value; }
+  104|       |
+  105|       |// add two numbers
+  106|     50|LargeNum LargeNum::operator+(const LargeNum &rhs) const {
+  107|     50|  LargeNum result;
+  108|     50|  if (isPositive && rhs.isPositive) {
+  109|     47|    result.setDigits(addDigits(digits, rhs.digits));
+  110|     47|    result.setIsPositive(true);
+  111|     47|  } else if (isPositive && !rhs.isPositive) {
+  112|      1|    if (abs() >= rhs.abs()) {
+  113|      1|      result.setDigits(subDigits(digits, rhs.digits));
+  114|      1|      result.setIsPositive(true);
+  115|      1|    } else {
+  116|      0|      result.setDigits(subDigits(rhs.digits, digits));
+  117|      0|      result.setIsPositive(false);
+  118|      0|    }
+  119|      2|  } else if (!getIsPositive() && rhs.getIsPositive()) {
+  120|      1|    if (abs() >= rhs.abs()) {
+  121|      1|      result.setDigits(subDigits(digits, rhs.digits));
+  122|      1|      result.setIsPositive(false);
+  123|      1|    } else {
+  124|      0|      result.setDigits(subDigits(rhs.digits, digits));
+  125|      0|      result.setIsPositive(true);
+  126|      0|    }
+  127|      1|  } else {
+  128|      1|    result.setDigits(addDigits(digits, rhs.digits));
+  129|      1|    result.setIsPositive(false);
+  130|      1|    result.negate();
+  131|      1|  }
+  132|     50|  return result;
+  133|     50|}
+  134|       |
+  135|       |// subtract two numbers
+  136|     54|LargeNum LargeNum::operator-(const LargeNum &rhs) const {
+  137|     54|  LargeNum result;
+  138|     54|  if (isPositive && rhs.isPositive) {
+  139|     51|    if (abs() >= rhs.abs()) {
+  140|     49|      result.setDigits(subDigits(digits, rhs.digits));
+  141|     49|      result.setIsPositive(true);
+  142|     49|    } else {
+  143|      2|      result.setDigits(subDigits(rhs.digits, digits));
+  144|      2|      result.setIsPositive(false);
+  145|      2|      result.negate();
+  146|      2|      result.isPositive = false;
+  147|      2|    }
+  148|     51|  } else if (isPositive && !rhs.isPositive) {
+  149|      1|    if (abs() >= rhs.abs()) {
+  150|      1|      result.setDigits(addDigits(digits, rhs.digits));
+  151|      1|      result.setIsPositive(true);
+  152|      1|    } else {
+  153|      0|      result.setDigits(subDigits(rhs.digits, digits));
+  154|      0|      result.setIsPositive(false);
+  155|      0|    }
+  156|      2|  } else if (!isPositive && rhs.isPositive) {
+  157|      1|    if (abs() >= rhs.abs()) {
+  158|      1|      result.setDigits(addDigits(digits, rhs.digits));
+  159|      1|      result.setIsPositive(false);
+  160|      1|      result.negate();
+  161|      1|    } else {
+  162|      0|      result.setDigits(subDigits(rhs.digits, digits));
+  163|      0|      result.setIsPositive(true);
+  164|      0|    }
+  165|      1|  } else {
+  166|      1|    if (abs() >= rhs.abs()) {
+  167|      1|      result.setDigits(subDigits(digits, rhs.digits));
+  168|      1|      result.setIsPositive(false);
+  169|      1|    } else {
+  170|      0|      result.setDigits(subDigits(rhs.digits, digits));
+  171|      0|      result.setIsPositive(true);
+  172|      0|    }
+  173|      1|  }
+  174|     54|  result.removeLeadingZeros(); // Remove leading zeros
+  175|     54|  return result;
+  176|     54|}
+  177|       |
+  178|       |// multiply two numbers
+  179|      5|LargeNum LargeNum::operator*(const LargeNum &rhs) const {
+  180|      5|  LargeNum result;
+  181|       |  // If either number is zero, the result is zero
+  182|      5|  if (isZero() || rhs.isZero()) {
+  183|      1|    return result;
+  184|      1|  }
+  185|       |  // Multiply using repeated addition
+  186|      4|  LargeNum multiplicand = abs();
+  187|      4|  LargeNum multiplier = rhs.abs();
+  188|     24|  while (multiplier > LargeNum(0)) {
+  189|     20|    result = result + multiplicand;
+  190|     20|    multiplier = multiplier - LargeNum(1);
+  191|     20|  }
+  192|       |  // Set the sign of the result
+  193|      4|  if (!isPositive && !rhs.isPositive) {
+  194|      1|    return result;
+  195|      1|  }
+  196|      3|  if (!isPositive || !rhs.isPositive) {
+  197|      2|    return result.negate();
+  198|      0|    ;
+  199|      0|  }
+  200|      1|  return result;
+  201|      3|}
+  202|       |
+  203|       |// divide two numbers. rhs is the divisor
+  204|       |// similar to integer division, ignore remainder
+  205|      7|LargeNum LargeNum::operator/(const LargeNum &rhs) const {
+  206|      7|  LargeNum quotient;
+  207|      7|  if (rhs.isZero()) {
+  208|       |    // division by zero
+  209|      0|    throw runtime_error("Division by zero");
+  210|      0|  }
+  211|      7|  if (isZero()) {
+  212|       |    // dividend is zero, quotient is zero
+  213|      1|    return quotient;
+  214|      1|  }
+  215|       |  // compute quotient as repeated subtraction
+  216|      6|  LargeNum dividend = abs();
+  217|      6|  LargeNum divisor = rhs.abs();
+  218|     29|  while (dividend >= divisor) {
+  219|     23|    dividend = dividend - divisor;
+  220|     23|    quotient = quotient + LargeNum(1);
+  221|     23|  }
+  222|       |  // set sign of quotient
+  223|      6|  if (!isPositive && !rhs.isPositive) {
+  224|      1|    return quotient;
+  225|      1|  }
+  226|      5|  if (!isPositive || !rhs.isPositive) {
+  227|      2|    return quotient.negate();
+  228|      2|  }
+  229|      3|  return quotient;
+  230|      5|}
+  231|       |
+  232|       |// return true if the numbers are equal
+  233|     38|bool LargeNum::operator==(const LargeNum &rhs) const {
+  234|       |  // if the sizes are different, the numbers can't be equal
+  235|       |
+  236|     38|  if (digits.size() != rhs.digits.size()) {
+  237|      1|    return false;
+  238|      1|  }
+  239|       |
+  240|       |  // iterate over the digits and compare them
+  241|    103|  for (int i = 0; i < digits.size(); i++) {
+  242|     67|    if (digits[i] != rhs.digits[i]) {
+  243|      1|      return false;
+  244|      1|    }
+  245|     67|  }
+  246|       |
+  247|       |  // if we made it this far, the numbers must be equal
+  248|     36|  return true;
+  249|     37|}
+  250|       |
+  251|       |// return true if the numbers are not equal
+  252|      1|bool LargeNum::operator!=(const LargeNum &rhs) const { return !(*this == rhs); }
+  253|       |
+  254|       |// return true if the left-hand-side number is less than the
+  255|       |// right-hand-side number
+  256|    124|bool LargeNum::operator<(const LargeNum &rhs) const {
+  257|    124|  if (isPositive != rhs.isPositive) {
+  258|      4|    return !isPositive;
+  259|      4|  }
+  260|    120|  if (digits.size() != rhs.digits.size()) {
+  261|     52|    return (digits.size() < rhs.digits.size()) ^ !isPositive;
+  262|     52|  }
+  263|    105|  for (size_t i = digits.size(); i-- > 0;) {
+  264|     82|    if (digits[i] != rhs.digits[i]) {
+  265|     45|      return (digits[i] < rhs.digits[i]) ^ !isPositive;
+  266|     45|    }
+  267|     82|  }
+  268|     23|  return false;
+  269|     68|}
+  270|       |
+  271|       |// return true if the left-hand-side number is greater than the
+  272|       |// right-hand-side number
+  273|     31|bool LargeNum::operator>(const LargeNum &rhs) const { return rhs < *this; }
+  274|       |
+  275|       |// return true if the left-hand-side number is less than or equal to the
+  276|       |// right-hand-side number
+  277|      1|bool LargeNum::operator<=(const LargeNum &rhs) const {
+  278|      1|  if (*this == rhs) {
+  279|      0|    return true;
+  280|      0|  }
+  281|      1|  return (*this < rhs);
+  282|      1|}
+  283|       |
+  284|       |// return true if the left-hand-side number is greater than or equal to
+  285|       |// the right-hand-side number
+  286|     86|bool LargeNum::operator>=(const LargeNum &rhs) const { return !(*this < rhs); }
+  287|       |
+  288|       |// prefix increment
+  289|      4|LargeNum &LargeNum::operator++() {
+  290|      4|  if (isPositive) {
+  291|       |    // increment the number represented by digits
+  292|      2|    int carry = 1;
+  293|      3|    for (int i = 0; i < digits.size(); ++i) {
+  294|      2|      digits[i] += carry;
+  295|      2|      carry = digits[i] / 10;
+  296|      2|      digits[i] %= 10;
+  297|      2|      if (carry == 0) {
+  298|      1|        break;
+  299|      1|      }
+  300|      2|    }
+  301|      2|    if (carry != 0) {
+  302|      1|      digits.push_back(carry);
+  303|      1|    }
+  304|      2|  } else {
+  305|       |    // decrement the number represented by digits
+  306|      2|    int carry = 1;
+  307|      2|    for (int i = 0; i < digits.size(); ++i) {
+  308|      2|      digits[i] -= carry;
+  309|      2|      if (digits[i] < 0) {
+  310|      0|        digits[i] += 10;
+  311|      0|        carry = 1;
+  312|      2|      } else {
+  313|      2|        carry = 0;
+  314|      2|        break;
+  315|      2|      }
+  316|      2|    }
+  317|      2|    if (carry != 0) {
+  318|      0|      isPositive = true;
+  319|      0|      digits[0] = -digits[0];
+  320|      0|      for (int i = 1; i < digits.size(); ++i) {
+  321|      0|        digits[i] = 9 - digits[i];
+  322|      0|      }
+  323|      0|      digits.push_back(1);
+  324|      0|    }
+  325|      2|  }
+  326|       |
+  327|      4|  if (digits.size() == 2 && digits[1] == -1 && digits[0] == 0) {
+  328|      1|    isPositive = true;
+  329|      1|    *this = LargeNum(0);
+  330|      1|  }
+  331|       |  // remove leading zeros
+  332|      4|  while (digits.size() > 1 && digits.back() == 0) {
+  333|      0|    digits.pop_back();
+  334|      0|  }
+  335|       |
+  336|      4|  return *this;
+  337|      4|}
+  338|       |
+  339|       |// postfix increment
+  340|      1|LargeNum LargeNum::operator++(int) {
+  341|      1|  LargeNum temp(*this);
+  342|      1|  ++(*this);
+  343|      1|  return temp;
+  344|      1|}
+  345|       |
+  346|       |// prefix decrement
+  347|      6|LargeNum &LargeNum::operator--() {
+  348|      6|  *this = *this - LargeNum(1);
+  349|      6|  return *this;
+  350|      6|}
+  351|       |
+  352|       |// postfix decrement
+  353|      2|LargeNum LargeNum::operator--(int) {
+  354|      2|  LargeNum temp(*this);
+  355|      2|  --(*this);
+  356|      2|  return temp;
+  357|      2|}
+  358|       |
+  359|       |//  remove leading zeros from the digits
+  360|    108|void LargeNum::removeLeadingZeros() {
+  361|    126|  while (digits.size() > 1 && digits.back() == 0) {
+  362|     18|    digits.pop_back();
+  363|     18|  }
+  364|    108|}
+  365|       |
+  366|       |// perform addition on two vectors of digits, ignoring signs
+  367|       |vector<int> LargeNum::addDigits(const vector<int> &lhs,
+  368|     50|                                const vector<int> &rhs) {
+  369|     50|  vector<int> result;
+  370|     50|  int carry = 0;
+  371|     50|  int index = 0;
+  372|       |
+  373|       |  // add digits until we run out of digits in one of the numbers
+  374|    131|  while (index < lhs.size() && index < rhs.size() && lhs[index] >= 0 &&
+  375|    131|         rhs[index] >= 0) {
+  376|     81|    int sum = lhs[index] + rhs[index] + carry;
+  377|     81|    result.push_back(sum % 10);
+  378|     81|    carry = sum / 10;
+  379|     81|    index++;
+  380|     81|  }
+  381|       |
+  382|       |  // add any remaining digits from lhs
+  383|       |
+  384|     71|  while (index < lhs.size() && lhs[index] >= 0) {
+  385|     21|    int sum = lhs[index] + carry;
+  386|     21|    result.push_back(sum % 10);
+  387|     21|    carry = sum / 10;
+  388|     21|    index++;
+  389|     21|  }
+  390|       |
+  391|       |  // add any remaining digits from rhs
+  392|     56|  while (index < rhs.size() && rhs[index] >= 0) {
+  393|      6|    int sum = rhs[index] + carry;
+  394|      6|    result.push_back(sum % 10);
+  395|      6|    carry = sum / 10;
+  396|      6|    index++;
+  397|      6|  }
+  398|       |
+  399|       |  // if there is a final carry, add it to the result
+  400|     50|  if (carry > 0) {
+  401|      5|    result.push_back(carry);
+  402|      5|  }
+  403|       |
+  404|     50|  return result;
+  405|     50|}
+  406|       |
+  407|       |// perform subtraction on two vectors of digits, ignoring signs
+  408|       |// lhs must be greater than or equal to rhs
+  409|       |vector<int> LargeNum::subDigits(const vector<int> &lhs,
+  410|     54|                                const vector<int> &rhs) const {
+  411|     54|  vector<int> result;
+  412|     54|  int borrow = 0;
+  413|     54|  int index = 0;
+  414|       |
+  415|       |  // subtract digits until we run out of digits in one of the numbers
+  416|    117|  while (index < lhs.size() && index < rhs.size()) {
+  417|     63|    int diff = lhs[index] - rhs[index] - borrow;
+  418|     63|    if (diff < 0) {
+  419|     14|      diff += 10;
+  420|     14|      borrow = 1;
+  421|     49|    } else {
+  422|     49|      borrow = 0;
+  423|     49|    }
+  424|     63|    result.push_back(diff);
+  425|     63|    index++;
+  426|     63|  }
+  427|       |
+  428|       |  // subtract any remaining digits from lhs
+  429|     80|  while (index < lhs.size() && lhs[index] >= 0) {
+  430|     26|    int diff = lhs[index] - borrow;
+  431|     26|    if (diff < 0) {
+  432|      2|      diff += 10;
+  433|      2|      borrow = 1;
+  434|     24|    } else {
+  435|     24|      borrow = 0;
+  436|     24|    }
+  437|     26|    result.push_back(diff);
+  438|     26|    index++;
+  439|     26|  }
+  440|       |
+  441|       |  // remove any leading zeros from the result
+  442|     54|  LargeNum copy(*this);
+  443|     54|  copy.digits = result;
+  444|     54|  copy.removeLeadingZeros();
+  445|       |
+  446|     54|  return copy.digits;
+  447|     54|}
+
+/home/NETID/agrach/2023win342d-p2-agrach060/largenum.h:
+    1|       |#include <iostream>
+    2|       |#include <vector>
+    3|       |
+    4|       |using namespace std;
+    5|       |
+    6|       |class LargeNum {
+    7|       |  // output number with a comma after ever 3 digits,
+    8|       |  // e.g. 1234567890 -> 1,234,567,890
+    9|       |  friend ostream &operator<<(ostream &out, const LargeNum &num);
+   10|       |
+   11|       |private:
+   12|       |  // Define private data members and methods here
+   13|       |  vector<int> digits; // the digits of the number, stored in reverse order
+   14|       |  bool isPositive;    // true if the number is positive, false if it is negative
+   15|       |
+   16|       |  // remove leading zeros from the digits
+   17|       |  void removeLeadingZeros();
+   18|       |
+   19|       |  // addition of two vectors of digits
+   20|       |  static vector<int> addDigits(const vector<int> &lhs, const vector<int> &rhs);
+   21|       |
+   22|       |  // subtraction of two vectors of digits
+   23|       |  vector<int> subDigits(const vector<int> &lhs, const vector<int> &rhs) const;
+   24|       |
+   25|       |public:
+   26|       |  // getter for isPositive
+   27|       |  bool getIsPositive() const;
+   28|       |  
+   29|       |  // setter for isPositive
+   30|       |  void setIsPositive(bool value);
+   31|       |
+   32|       |  // getters for digits
+   33|       |  vector<int> getDigits() const;
+   34|       |
+   35|       |  // setter for digits
+   36|       |  void setDigits(const vector<int> &newDigits);
+   37|       |
+   38|       |  // returns absolute value
+   39|       |  LargeNum abs() const;
+   40|       |
+   41|       |  // constructor from string
+   42|       |  explicit LargeNum(const string &str = "0");
+   43|       |
+   44|       |  // constructor from int
+   45|       |  explicit LargeNum(int anInteger);
+   46|       |
+   47|       |  // use the default copy constructor
+   48|    201|  LargeNum(const LargeNum &other) = default;
+   49|       |
+   50|       |  // use the default copy assignment operator
+   51|    282|  LargeNum &operator=(const LargeNum &other) = default;
+   52|       |
+   53|       |  // use the default destructor
+   54|    703|  ~LargeNum() = default;
+   55|       |
+   56|       |  // returns true if the number is zero
+   57|       |  bool isZero() const;
+   58|       |
+   59|       |  // negates the number, positive becomes negative, negative becomes positive
+   60|       |  // Zero is always positive
+   61|       |  LargeNum &negate();
+   62|       |
+   63|       |  // add two numbers
+   64|       |  LargeNum operator+(const LargeNum &rhs) const;
+   65|       |
+   66|       |  // subtract two numbers
+   67|       |  LargeNum operator-(const LargeNum &rhs) const;
+   68|       |
+   69|       |  // multiply two numbers
+   70|       |  LargeNum operator*(const LargeNum &rhs) const;
+   71|       |
+   72|       |  // divide two numbers. rhs is the divisor
+   73|       |  // similar to integer division, ignore remainder
+   74|       |  LargeNum operator/(const LargeNum &rhs) const;
+   75|       |
+   76|       |  // return true if the numbers are equal
+   77|       |  bool operator==(const LargeNum &rhs) const;
+   78|       |
+   79|       |  // return true if the numbers are not equal
+   80|       |  bool operator!=(const LargeNum &rhs) const;
+   81|       |
+   82|       |  // return true if the left-hand-side number is less than the
+   83|       |  // right-hand-side number
+   84|       |  bool operator<(const LargeNum &rhs) const;
+   85|       |
+   86|       |  // return true if the left-hand-side number is greater than the
+   87|       |  // right-hand-side number
+   88|       |  bool operator>(const LargeNum &rhs) const;
+   89|       |
+   90|       |  // return true if the left-hand-side number is less than or equal to the
+   91|       |  // right-hand-side number
+   92|       |  bool operator<=(const LargeNum &rhs) const;
+   93|       |
+   94|       |  // return true if the left-hand-side number is greater than or equal to the
+   95|       |  // right-hand-side number
+   96|       |  bool operator>=(const LargeNum &rhs) const;
+   97|       |
+   98|       |  // prefix increment
+   99|       |  LargeNum &operator++();
+  100|       |
+  101|       |  // postfix increment
+  102|       |  LargeNum operator++(int);
+  103|       |
+  104|       |  // prefix decrement
+  105|       |  LargeNum &operator--();
+  106|       |
+  107|       |  // postfix decrement
+  108|       |  LargeNum operator--(int);
+  109|       |};
+
+/home/NETID/agrach/2023win342d-p2-agrach060/main.cpp:
+    1|       |
+    2|       |#include "largenum.h"
+    3|       |#include <cassert>
+    4|       |#include <iostream>
+    5|       |#include <sstream>
+    6|       |
+    7|       |using namespace std;
+    8|       |
+    9|       |// check printing and addition
+   10|      1|void test1() {
+   11|      1|  stringstream strs;
+   12|       |
+   13|      1|  LargeNum num0("1234567890123456789");
+   14|      1|  strs << num0;
+   15|      1|  cout<< strs.str()<<"here"<< endl;
+   16|      1|  assert(strs.str() == "1,234,567,890,123,456,789");
+   17|       |
+   18|      0|  strs.str("");
+   19|      1|  LargeNum num1(12345);
+   20|      1|  strs << num1;
+   21|       |
+   22|      1|  assert(strs.str() == "12,345");
+   23|       |
+   24|      0|  strs.str("");
+   25|      1|  LargeNum num2(11115);
+   26|      1|  LargeNum num3 = num1 + num2;
+   27|      1|  strs << num3;
+   28|      1|  assert(strs.str() == "23,460");
+   29|       |
+   30|      0|  strs.str("");
+   31|      1|  LargeNum num4(99);
+   32|      1|  LargeNum num5 = num1 + num4;
+   33|      1|  strs << num5;
+   34|      1|  assert(strs.str() == "12,444");
+   35|       |
+   36|      0|  strs.str("");
+   37|      1|  LargeNum num6(99000);
+   38|      1|  LargeNum num7 = num1 + num6;
+   39|      1|  strs << num7;
+   40|      1|  assert(strs.str() == "111,345");
+   41|       |
+   42|      0|  strs.str("");
+   43|      1|  LargeNum num8 = num0 + num1;
+   44|      1|  strs << num8;
+   45|      1|  assert(strs.str() == "1,234,567,890,123,469,134");
+   46|       |
+   47|      0|  cout << "test1 complete" << endl;
+   48|      1|}
+   49|       |
+   50|       |// check comparator operators
+   51|      1|void test2() {
+   52|      1|  assert(LargeNum(99) == LargeNum(99) && LargeNum(99) != LargeNum(100));
+   53|      0|  assert(LargeNum(7) < LargeNum(99));
+   54|      0|  assert(LargeNum(99) > LargeNum(7));
+   55|      0|  assert(LargeNum(99) > LargeNum(7) && LargeNum(7) < LargeNum(99));
+   56|      0|  assert(LargeNum(105) >= LargeNum(100) && LargeNum(100) <= LargeNum(105));
+   57|      0|  assert(LargeNum(-7) < LargeNum(99));
+   58|      0|  assert(LargeNum(99) > LargeNum(-7));
+   59|      0|  assert(LargeNum(99) > LargeNum(-7) && LargeNum(-7) < LargeNum(99));
+   60|      0|  assert(LargeNum(-10) < LargeNum(-5));
+   61|      0|  assert(LargeNum(-5) > LargeNum(-10));
+   62|      0|  assert(LargeNum(-5) > LargeNum(-10) && LargeNum(-10) < LargeNum(-5));
+   63|      0|  assert(!(LargeNum(5) > LargeNum(5)));
+   64|      0|  cout << "test2 complete" << endl;
+   65|      1|}
+   66|       |
+   67|       |// check negative numbers
+   68|      1|void test3() {
+   69|      1|  stringstream strs;
+   70|      1|  LargeNum num0("-1234567890123456789");
+   71|      1|  strs << num0;
+   72|      1|  assert(strs.str() == "-1,234,567,890,123,456,789");
+   73|       |
+   74|      0|  strs.str("");
+   75|      1|  LargeNum num1(-12345);
+   76|      1|  strs << num1;
+   77|      1|  assert(strs.str() == "-12,345");
+   78|       |
+   79|      0|  strs.str("");
+   80|      1|  LargeNum numZero(-0000);
+   81|      1|  strs << numZero;
+   82|      1|  assert(strs.str() == "0");
+   83|       |
+   84|      0|  assert(LargeNum(0).isZero() && LargeNum(-0).isZero());
+   85|      0|  assert(LargeNum(0) == LargeNum(-0));
+   86|      0|  assert(LargeNum(0).negate() == LargeNum(-0));
+   87|      0|  assert(LargeNum(100) - LargeNum(100) == LargeNum(0));
+   88|      0|  assert(LargeNum(100) + LargeNum(-100) == LargeNum(0));
+   89|      0|  assert(LargeNum(100) - LargeNum(-100) == LargeNum(200));
+   90|      0|  assert(LargeNum(-100) - LargeNum(-100) == LargeNum(0));
+   91|      0|  assert(LargeNum(-100) + LargeNum(100) == LargeNum(0));
+   92|      0|  assert(LargeNum(100) - LargeNum(7) == LargeNum(93));
+   93|      0|  assert(LargeNum(7) - LargeNum(100) == LargeNum(-93));
+   94|      0|  assert(LargeNum(-7) + LargeNum(-100) == LargeNum(-107));
+   95|      0|  cout << "test3 complete" << endl;
+   96|      1|}
+   97|       |
+   98|       |// check multiplication
+   99|      1|void test4() {
+  100|      1|  assert(LargeNum(25) * LargeNum(0) == LargeNum(0));
+  101|      0|  assert(LargeNum(25) * LargeNum(5) == LargeNum(125));
+  102|      0|  assert(LargeNum(-25) * LargeNum(-5) == LargeNum(125));
+  103|      0|  assert(LargeNum(-25) * LargeNum(5) == LargeNum(-125));
+  104|      0|  assert(LargeNum(25) * LargeNum(-5) == LargeNum(-125));
+  105|      0|  cout << "test4 complete" << endl;
+  106|      1|}
+  107|       |
+  108|       |// check division
+  109|       |// use small numbers to avoid excessive computation
+  110|      1|void test5() {
+  111|      1|  assert(LargeNum(0) / LargeNum(5) == LargeNum(0));
+  112|      0|  assert(LargeNum(25) / LargeNum(5) == LargeNum(5));
+  113|      0|  assert(LargeNum(-25) / LargeNum(-5) == LargeNum(5));
+  114|      0|  assert(LargeNum(-25) / LargeNum(5) == LargeNum(-5));
+  115|      0|  assert(LargeNum(25) / LargeNum(-5) == LargeNum(-5));
+  116|      0|  assert(LargeNum("25") / LargeNum("7") == LargeNum("3"));
+  117|      0|  assert(LargeNum("7") / LargeNum("25") == LargeNum("0"));
+  118|      0|  cout << "test5 complete" << endl;
+  119|      1|}
+  120|       |
+  121|       |// check prefix and postfix operators
+  122|      1|void test6() {
+  123|      1|  LargeNum num0(10);
+  124|      1|  assert(num0++ == LargeNum(10));
+  125|      0|  assert(num0 == LargeNum(11));
+  126|      0|  assert(--num0 == LargeNum(10));
+  127|      0|  assert(num0-- == LargeNum(10));
+  128|      0|  assert(num0 == LargeNum(9));
+  129|      0|  assert(++num0 == LargeNum(10));
+  130|      0|  assert(num0-- == LargeNum(10));
+  131|      0|  assert(num0 == LargeNum(9));
+  132|      0|  num0.negate();
+  133|      1|  assert(++num0 == LargeNum(-8));
+  134|      0|  assert(--num0 == LargeNum(-9));
+  135|      0|  LargeNum num1(1);
+  136|      1|  assert(--num1 == LargeNum(0));
+  137|      0|  assert(--num1 == LargeNum(-1));
+  138|      0|  assert(++num1 == LargeNum(0));
+  139|      0|  cout << "test6 complete" << endl;
+  140|      1|}
+  141|       |
+  142|       |// run all tests
+  143|      1|int main() {
+  144|      1|  test1();
+  145|      1|  test2();
+  146|      1|  test3();
+  147|      1|  test4();
+  148|      1|  test5();
+  149|      1|  test6();
+  150|       |
+  151|      1|  cout << "Done." << endl;
+  152|      1|}
+
+Sun May 21 21:49:32 PDT 2023
+=====================================================
+To create an output.txt file with all the output from this script
+Run the below command
+      ./create-output.sh > output.txt 2>&1 
+=====================================================
